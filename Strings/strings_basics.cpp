@@ -51,5 +51,17 @@ string s4 = "";
 
    cout<<s4.find("abc")<<endl;
 
+   int a = 123;
+   string s6 = to_string(a);
+   cout<<s6<<endl;
+   s6[1] = '4';
+   cout<<s6<<endl;
+
+    s6.push_back('5');
+    cout<<s6<<endl;
+
+    a = atoi(s6.c_str());
+    cout<<a<<endl;
+
 
 }
