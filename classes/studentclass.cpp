@@ -21,6 +21,9 @@ Student( int a , int Rollno ){
     age=a;
    this->Rollno=Rollno;
 }
+~Student(){
+    cout<<"Destructor called"; 
+}
 void Setage(int a){
     age=a; 
 }
