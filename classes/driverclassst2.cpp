@@ -39,6 +39,7 @@ s11.display();
 cout<<" Now use copy assignment operator for objects \n  and now this is s10";
 *s10=s11; 
 s10->display(); 
+Student s13=*s10; // copy constructor
 // Dynamically allocated objects are not automatically deleted so one needs to delete them explicitly which triggers
 // a call to our custom destructor 
 delete s4, s9, s10; 
