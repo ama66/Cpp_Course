@@ -17,7 +17,7 @@ class Fraction {
 			this -> denominator = denominator;
 		}
 
-		int getNumerator() const {
+		int getNumerator() const {  // this function will not alter the state of the object it acts on 
 			return numerator;
 		}
 
@@ -48,7 +48,7 @@ class Fraction {
 			this -> numerator = this -> numerator / gcd;
 			this -> denominator = this -> denominator / gcd;
 		}
-
+//constant reference means f2 references main.f2 but is not able to modify it
 		void add(Fraction const &f2) {
 			int lcm = denominator * f2.denominator;
 			int x = lcm / denominator;
