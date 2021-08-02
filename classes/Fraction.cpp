@@ -61,6 +61,22 @@ class Fraction {
 			simplify();
 		}
 
+// operator overloading of the + operator 
+	Fraction operator+(Fraction const &f2) const {
+			int lcm = denominator * f2.denominator;
+			int x = lcm / denominator;
+			int y = lcm / f2.denominator;
+
+			int num = x * numerator + (y * f2.numerator);
+
+			//numerator = num;
+			//denominator = lcm;
+            Fraction fnew(num, lcm); 
+            fnew.simplify();
+            return fnew; 
+		}
+
+
 		void multiply(Fraction const &f2) {
 			numerator = numerator * f2.numerator;
 			denominator = denominator * f2.denominator;
@@ -68,4 +84,13 @@ class Fraction {
 			simplify();
 		}
 
+      	Fraction operator*(Fraction const &f2) const {
+         Fraction fnew(numerator * f2.numerator, denominator * f2.denominator); 
+            fnew.simplify();
+            return fnew; 
+		}
+
+        bool operator==(Fraction const &f2) const{
+            return (numerator==f2.numerator && denominator==f2.denominator) ; 
+        }
 };
