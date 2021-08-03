@@ -18,6 +18,6 @@ cout<<d.get(6)<<endl;
 cout<<"capacity "<<d.getCapacity()<<endl; 
 d.print();
 
-
+// 
 
 }
