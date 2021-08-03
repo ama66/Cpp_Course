@@ -1,2 +1,1 @@
-
-    // Fraction f3;
+getCapacity
