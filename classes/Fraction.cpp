@@ -93,4 +93,41 @@ class Fraction {
         bool operator==(Fraction const &f2) const{
             return (numerator==f2.numerator && denominator==f2.denominator) ; 
         }
+// ++3/2 >>> 3/2+ 1 =3/2 + 2/2 = 5/2 or num +denom /denom
+       /* void operator++(){
+            numerator+=denominator ;
+        }*/// this version does not return anything it just updates the fraction 
+        Fraction& operator++(){   // return a reference to a fraction
+            numerator+=denominator; 
+            return *this ; // the content of this (the content of the fraction! )
+        }
+
+		Fraction operator++(int) // pass operator++ an integer to signify post increment
+		// note that nesting is not allowed for post increment so you cannot do (f1++)++
+		{
+			//first assign the fraction and then increment
+			Fraction fnew(numerator, denominator); 
+			// now increment 
+			numerator+= denominator;
+			simplify() ; 
+			return fnew ;
+		}
+		// now the operator += 
+		// here nesting is allowed so need to return fraction by reference 
+		Fraction & operator+=(Fraction const f2)
+	    {
+     		int lcm = denominator * f2.denominator;
+			int x = lcm / denominator;
+			int y = lcm / f2.denominator;
+
+			int num = x * numerator + (y * f2.numerator);
+
+			numerator = num;
+			denominator = lcm;
+            simplify();
+            
+            return  *this ;
+
+		}
+
 };

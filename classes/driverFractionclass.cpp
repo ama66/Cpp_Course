@@ -29,6 +29,21 @@ int main() {
     else{
         cout<<" Fractions are not equal "; 
     }
+
+    f7.print();
+    // ++f7; 
+    // f7.print();
+    Fraction f8=++(++f7); // makes a big difference whether you are returning by reference or value
+    f7.print() ;
+    f8.print(); 
+    Fraction f9=f8++ ; 
+
+    f9.print();
+    f8.print();
+    f8+=f9; 
+    f9.print();
+    f8.print();
 	return 0; 
+
 }
 
