@@ -12,7 +12,22 @@ class DynamicArray{
         nextIndex=0; 
         capacity=5;
     } 
+    DynamicArray(DynamicArray const &d)
+    {
+        this->nextIndex=d.nextIndex; 
+        this->capacity=d.capacity; 
+        this->data= new int[d.capacity];
+        for (int i=0; i<d.nextIndex;i++){
+            this->data[i]=d.data[i];
+        }
 
+    }
+    //parameterized constructor passing capacity c
+     DynamicArray(int c){
+         data=new int[c]; 
+         nextIndex=0; 
+         capacity=c;
+     }
     void add(int element){
         if (nextIndex==capacity){
             int *newdata= new int[capacity*2]; 
@@ -40,7 +55,7 @@ class DynamicArray{
         }
     }
     int getCapacity(){return capacity; }
-    int get(int i){
+    int getElem(int i){
         if (i>=0 && i <nextIndex){
             return data[i];
         }else{
@@ -53,4 +68,13 @@ class DynamicArray{
        }
        cout<<endl; 
    }
+   void operator=(DynamicArray const &d){
+        this->nextIndex=d.nextIndex; 
+        this->capacity=d.capacity; 
+        this->data= new int[d.capacity];
+        for (int i=0; i<d.nextIndex;i++){
+            this->data[i]=d.data[i];
+        }
+   }
+
 }; 
