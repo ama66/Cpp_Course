@@ -11,7 +11,8 @@ Student s2;
 Student s3,s4,s5; 
 cout<< " These are new instances of the student class\n"; 
 
-*s6 = new Student;
+Student *s6 = new Student;
+
 (*s6).age=50; 
 
 cout << " Student 6 age is " <<  *s6).age ; 
