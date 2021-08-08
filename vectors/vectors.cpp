@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include <algorithm>
 using namespace std; 
 
 int main(){
@@ -23,22 +24,44 @@ for (int i=0; i<v.size();i++){
 }
 v.pop_back(); //delete last element on the stack! 
 cout<<" Now printing Vector<int> after deleting last element in the stack "<<endl; 
-
+cout << "V before sorting" ; 
 for (int i=0; i<v.size();i++){
     cout<<v[i]<<endl; 
 }
 
+
+    for (int i=0; i<v.size();i++){
+    cout<<v[i]<<endl; 
+}
 vector<int> v2(10, -2); //initialize size 10 vector filled with -2 
 cout<< " Now printing v2"<<endl; 
 for (int i=0; i<v2.size();i++)
 {
 cout<< v2[i]<<endl; 
 }
+
 cout<< " Now testing Dynamic Arrays";
 for (int i=0; i<100; i++){
     cout<<vp->size() <<" " <<vp->capacity() <<endl ; 
         vp->push_back(i+1);
 }
+
+cout << "V before sorting\n" ; 
+int t=v[0];
+v[0]=v[1];
+v[1]=t;
+
+for (int i=0; i<v.size();i++){
+    cout<<v[i]<<endl; 
+}
+
+cout << " \n v after sorting \n"; 
+
+sort(v.begin(),v.end());
+for (int i=0; i<v.size();i++){
+    cout<<v[i]<<endl; 
+}
+
 
 return 0 ; 
 }
